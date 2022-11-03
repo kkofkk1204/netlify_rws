@@ -30,9 +30,10 @@ def hello_world():
     passwd='Kk27062779',
     db='chungtsui$default',)
 
-    address = request.args.get('address')
+    # address = request.args.get('address')
     cur = db_connect.cursor()
-    cur.execute(f'select * from ecdsa where address = "{address}";')
+    cur.execute('select * from ecdsa')
+    # cur.execute(f'select * from ecdsa where address = "{address}";')
     data = cur.fetchall()
     return str(data)
 
